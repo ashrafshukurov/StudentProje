@@ -4,7 +4,7 @@ import com.springboot.project.model.Student;
 
 import java.util.List;
 
-public interface StudentRepository {
+public interface StudentRepository  {
     void delete(int id);
     void save(Student student);
     void update(int id, Student student);

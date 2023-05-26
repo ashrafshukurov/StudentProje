@@ -10,7 +10,7 @@ import lombok.*;
 @NonNull
 @Builder
 public class Student {
-    private int id;
+    private Long id;
     private String name;
     private String email;
 }
