@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <style>
+        body {
+            background-color: lightgray;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #337ab7;
+            margin-bottom: 20px;
+        }
+        h3{
+          font-family: Calibri;
+            font-style: italic;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #337ab7;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #5cb85c;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+        <h3 align="center"> Student Management system</h3>
+    <hr>
+    <h2>Save Employee</h2>
+    <hr>
+    <form action="#" th:action="@{/students/save}" th:object="${studentRequest}"
+          method="post">
+        <input  type="text" th:field="*{name}"  placeholder="Student Name"
+               class="form-control mb-4 col-4">
+        <input type="text" th:field="*{age}" placeholder="Student age"
+               class="form-control mb-4 col-4">
+        <input type="text" th:field="*{name}" placeholder="Student grade"
+               class="form-control mb-4 col-4">
+        <input type="text" th:field="*{name}" placeholder="Student address"
+               class="form-control mb-4 col-4">
+        <input type="text" th:field="*{name}" placeholder="Student phoneNumber"
+               class="form-control mb-4 col-4">
+        <input type="text" th:field="*{name}" placeholder="Student groupName"
+               class="form-control mb-4 col-4">
+        <input type="text" th:field="*{name}" placeholder="Student groupNumber"
+               class="form-control mb-4 col-4">
+        <input type="text" th:field="*{name}" placeholder="Student teacherName"
+               class="form-control mb-4 col-4">
+        <input type="text" th:field="*{name}" placeholder="Student teacherAge"
+               class="form-control mb-4 col-4">
+        <input type="text" th:field="*{name}" placeholder="Student teacherSurName"
+               class="form-control mb-4 col-4">
+        <button type="submit" class="btn btn-info col-2">Save
+            Employee</button>
+        <a th:href="@{/students/}" class="btn btn-info col-2">Back to Student List</a>
+    </form>
+
+</div>
+</body>
+</html>
