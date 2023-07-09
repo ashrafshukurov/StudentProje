@@ -41,10 +41,6 @@
             color: white;
         }
 
-        .btn-primary {
-            background-color: #5cb85c;
-            color: white;
-        }
 
     </style>
 </head>
@@ -56,25 +52,25 @@
     <hr>
     <form action="#" th:action="@{/students/save}" th:object="${studentRequest}"
           method="post">
-        <input  type="text" th:field="*{name}"  placeholder="Student Name"
+        <input  type="text" th:field="*{groupName}"  placeholder="Group Name"
                class="form-control mb-4 col-4">
-        <input type="text" th:field="*{age}" placeholder="Student age"
+        <input type="text" th:field="*{groupNumber}" placeholder="Group Number"
                class="form-control mb-4 col-4">
-        <input type="text" th:field="*{name}" placeholder="Student grade"
+        <input type="text" th:field="*{name}" placeholder="Student Name"
                class="form-control mb-4 col-4">
-        <input type="text" th:field="*{name}" placeholder="Student address"
+        <input type="text" th:field="*{age}" placeholder="Student Age"
                class="form-control mb-4 col-4">
-        <input type="text" th:field="*{name}" placeholder="Student phoneNumber"
+        <input type="text" th:field="*{grade}" placeholder="Student Grade"
                class="form-control mb-4 col-4">
-        <input type="text" th:field="*{name}" placeholder="Student groupName"
+        <input type="text" th:field="*{address}" placeholder="Student Address"
                class="form-control mb-4 col-4">
-        <input type="text" th:field="*{name}" placeholder="Student groupNumber"
+        <input type="text" th:field="*{phoneNumber}" placeholder="Student PhoneNumber"
                class="form-control mb-4 col-4">
-        <input type="text" th:field="*{name}" placeholder="Student teacherName"
+        <input type="text" th:field="*{teacherName}" placeholder="Student TeacherName"
                class="form-control mb-4 col-4">
-        <input type="text" th:field="*{name}" placeholder="Student teacherAge"
+        <input type="text" th:field="*{teacherSurname}" placeholder="Student TeacherSurName"
                class="form-control mb-4 col-4">
-        <input type="text" th:field="*{name}" placeholder="Student teacherSurName"
+        <input type="text" th:field="*{teacherAge}" placeholder="Student TeacherAge"
                class="form-control mb-4 col-4">
         <button type="submit" class="btn btn-info col-2">Save
             Employee</button>

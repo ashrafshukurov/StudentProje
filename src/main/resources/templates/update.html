@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: lightgray;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #337ab7;
+            margin-bottom: 20px;
+        }
+        h1{
+            font-family: Calibri;
+            font-style: italic;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #337ab7;
+            color: white;
+        }
+        .custom-bg {
+            background-color:#337ab7 ; /* Replace 'blue' with the desired color value */
+            color:white;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+<h1 align="center">Student Management System</h1>
+<hr>
+    <h2>Update Student</h2>
+<form action="#" th:action="@{/students/save}" th:object="${studentResponse}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <input type="text" th:field="*{name}"class="form-control mb-3 col-2" placeholder="Enter Name"/>
+    <input type="text" th:field="*{age}" class="form-control mb-3 col-2" placeholder="Enter Age"/>
+    <input type="text" th:field="*{grade}" class="form-control mb-3 col-2 " placeholder="Enter Grade"/>
+    <input type="text" th:field="*{address}" class="form-control mb-3 col-2" placeholder="Enter address"/>
+    <input type="text" th:field="*{phoneNumber}"class="form-control mb-3 col-2" placeholder="Enter phoneNumber"/>
+    <button type="submit" class="btn btn-info col-2"> Update Employee</button>
+    <a th:href ="@{/students/}" class="btn btn-info col-2 custom-bg"> Back to Employee List</a>
+</form>
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

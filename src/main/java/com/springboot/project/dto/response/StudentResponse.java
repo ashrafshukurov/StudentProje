@@ -16,6 +16,8 @@ public class StudentResponse {
     private String email;
     private int age;
     private String grade;
+    private String phoneNumber;
+    private String address;
     private String fileName;
     private List<TeacherResponse> teacherResponses=new ArrayList<>();
 

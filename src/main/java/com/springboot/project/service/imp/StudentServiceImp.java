@@ -131,7 +131,8 @@ public class StudentServiceImp implements StudentService {
     @Override
     public void deleteStudent(Long id) {
         log.info("Students deleted successfully by id:{}", id);
-        Student student = studentRepository.findById(id).orElseThrow(() -> new NoSuchElementException("There is no such id in the Db Table"));
+
+         studentRepository.deleteById(id);
     }
 
 

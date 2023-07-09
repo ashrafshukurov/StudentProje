@@ -21,31 +21,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Slf4j
-@Controller
-@RequestMapping("/students")
+@RestController
+@RequestMapping("/students1")
 @RequiredArgsConstructor
 public class StudentController {
 
     private final StudentService studentService;
     private final FileUtil fileUtil;
-
-    @GetMapping("/")
-    public String viewHomePage(Model model) {
-        model.addAttribute("allStudentList", studentService.getAllStudents());
-        return "index";
-    }
-
-    @GetMapping("/add")
-    public String addStudent(Model model) {
-        StudentRequest studentRequest = new StudentRequest();
-        model.addAttribute("studentRequest", studentRequest);
-        return "students";
-
-    }
-    @PostMapping("/save")
-    public String saveStudent(@ModelAttribute("studentRequest") StudentRequest studentRequest) {
-         studentService.addStudent(studentRequest);
-         return "redirect:/";
+    @GetMapping("/home")
+    public String getHome(){
+        return "Home";
     }
 
 
@@ -62,10 +47,8 @@ public class StudentController {
 
     @ApiOperation(value = "Get Students list", notes = "All Students will retrieve", response = List.class)
     @GetMapping("/students")
-    public String getStudents(Model model) {
-        model.addAttribute("studentsResponse", studentService.getAllStudents());
-        return "students";
-
+    public ResponseEntity<List<GroupResponse>> getStudents() {
+        return ResponseEntity.ok(studentService.getAllStudents());
     }
 
     @DeleteMapping("/{id}")

@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 123
+      author: Ashraf Shukurov
+      changes:
+        - addColumn:
+            tableName: employee
+            columns:
+              - column:
+                  name: surname
+                  type: varchar(20)
+
+
